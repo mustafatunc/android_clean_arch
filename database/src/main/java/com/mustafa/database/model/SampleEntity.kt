@@ -9,7 +9,7 @@ data class SampleEntity(
     val count: Int,
     val dateAdded: Long,
     val expires: Long
-){
+) {
     @PrimaryKey(autoGenerate = true)
     var sampleId: Int = 0
 }

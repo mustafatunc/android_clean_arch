@@ -1,12 +1,12 @@
 package com.mustafa.database.source
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.mustafa.database.dao.SampleDao
 import com.mustafa.database.model.SampleEntity
-import java.lang.Exception
 
 @Database(entities = [SampleEntity::class], version = 1)
 abstract class AppDb: RoomDatabase() {
@@ -18,7 +18,7 @@ abstract class AppDb: RoomDatabase() {
         private var db: AppDb? = null
 
         fun initDb(context: Context){
-
+            Log.d("AppDb", "initiating database")
             db = Room.databaseBuilder(
                 context,
                 AppDb::class.java,

@@ -4,7 +4,6 @@ import com.mustafa.network.model.Sample
 import retrofit2.http.GET
 
 internal interface SampleDto {
-
     @GET("sample")
-    fun getSample(): Sample
+    suspend fun getSample(): Sample
 }
