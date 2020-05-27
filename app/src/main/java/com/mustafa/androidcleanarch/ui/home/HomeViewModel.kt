@@ -10,7 +10,7 @@ import com.mustafa.domain.model.Sample
 import com.mustafa.domain.usecase.SampleUseCase
 
 class HomeViewModel(val useCase: SampleUseCase) : ViewModel() {
-
+    private val TAG = HomeViewModel::class.java.simpleName
     private val _errors = MutableLiveData<BaseException>()
     val errorLiveData: LiveData<BaseException> = _errors
 
@@ -22,11 +22,11 @@ class HomeViewModel(val useCase: SampleUseCase) : ViewModel() {
             viewModelScope,
             SampleUseCase.Params(name),
             {
-                Log.d("HomeViewModel", "Successful response")
+                Log.d(TAG, "Successful response")
                 _sample.postValue(it)
             },
             {
-                Log.d("HomeViewModel", "Failure response: ${it.message}")
+                Log.d(TAG, "Failure response: ${it.message}")
                 _errors.postValue(it)
             }
         )

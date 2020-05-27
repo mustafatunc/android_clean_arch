@@ -15,7 +15,7 @@ class DtoProvider private constructor(context: Context) {
     private val retrofit: Retrofit
 
     init {
-        Log.d("DtoProvider", "Initializing retrofit")
+        Log.d("DtoProvider","Initializing retrofit")
         val client = OkHttpClient.Builder()
             .addInterceptor(ChuckInterceptor(context))
             .build()

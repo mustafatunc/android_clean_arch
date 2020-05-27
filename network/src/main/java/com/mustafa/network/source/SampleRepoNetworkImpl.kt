@@ -10,7 +10,7 @@ internal class SampleRepoNetworkImpl : SampleRepoNetwork {
 
     @Throws(Exception::class)
     override suspend fun fetchSample(): Sample {
-        Log.d("SampleRepoNetworkImpl", "Fetching...")
+        Log.d("SampleRepoNetworkImpl","Fetching...")
         return api.getSample().toRepo()
     }
 }

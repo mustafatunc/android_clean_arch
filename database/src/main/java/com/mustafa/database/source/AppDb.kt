@@ -9,16 +9,16 @@ import com.mustafa.database.dao.SampleDao
 import com.mustafa.database.model.SampleEntity
 
 @Database(entities = [SampleEntity::class], version = 1)
-abstract class AppDb: RoomDatabase() {
+abstract class AppDb : RoomDatabase() {
 
     abstract fun getSampleDao(): SampleDao
 
-    companion object{
+    companion object {
 
         private var db: AppDb? = null
 
-        fun initDb(context: Context){
-            Log.d("AppDb", "initiating database")
+        fun initDb(context: Context) {
+            Log.d("AppDb","initiating database")
             db = Room.databaseBuilder(
                 context,
                 AppDb::class.java,
@@ -26,8 +26,8 @@ abstract class AppDb: RoomDatabase() {
             ).build()
         }
 
-        fun getDb(): AppDb{
-            return db?: throw Exception("Database is not initialized yet")
+        fun getDb(): AppDb {
+            return db ?: throw Exception("Database is not initialized yet")
         }
     }
 

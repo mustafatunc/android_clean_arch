@@ -13,7 +13,8 @@ class SampleRepositoryImpl(
     private val network: SampleRepoNetwork,
     private val cache: SampleRepoDatabase
 ) : SampleRepository {
-    private val TAG = "SampleRepositoryImpl"
+
+    private val TAG = this::class.java.simpleName
 
     @Throws(BaseException::class)
     override suspend fun getSample(name: String): Sample {
