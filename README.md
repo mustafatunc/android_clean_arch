@@ -17,4 +17,4 @@ Koin - Dependency injection
 Architecture
 -------------
 Module dependencies
-![architecture](https://github.com/mustafatunc/android-clean-arch/blob/master/arts/modules.jpg)
+![architecture](https://github.com/mustafatunc/android_clean_arch/blob/master/arts/modules.jpg)
